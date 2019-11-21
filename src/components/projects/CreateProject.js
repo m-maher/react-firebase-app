@@ -24,24 +24,26 @@ class CreateProject extends Component {
         const {auth} = this.props
         if (!auth.uid) return <Redirect to='signin' />
         return (
-            <div className="container">
-                <form onSubmit={this.handleSubmit}>
-                    <h4>Create Project</h4>
-                    <div>
-                        <label>Title: </label>
-                        <br/>
-                        <input name="title" type="text" onChange={this.handleChange} />
-                    </div>
-                    <div>
-                        <label>Content: </label>
-                        <br/>
-                        <textarea name="content" onChange={this.handleChange}></textarea>
-                    </div>
-                    <div>
-                        <button className="btn btn-primary">Submit</button>
-                    </div>
-                </form>
-            </div>
+            <section className="create-project my-5">
+                <div className="container">
+                    <form onSubmit={this.handleSubmit}>
+                        <h4>Create Project</h4>
+                        <div className="form-group">
+                            <label>Title: </label>
+                            <br/>
+                            <input name="title" type="text" className="form-control" onChange={this.handleChange} />
+                        </div>
+                        <div className="form-group">
+                            <label>Content: </label>
+                            <br/>
+                            <textarea name="content" className="form-control" onChange={this.handleChange}></textarea>
+                        </div>
+                        <div>
+                            <button className="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
         )
     }
 }
